@@ -5,8 +5,7 @@ import ru.codes.nord.enums.Result;
 
 import static utils.ErrorMessageConstants.*;
 import static utils.TokenUtil.generateUniqueToken;
-import static utils.WireMockStubs.mockAuthMethodFailed;
-import static utils.WireMockStubs.mockAuthMethodSuccess;
+import static utils.WireMockStubs.*;
 
 public class LoginTest extends BaseTest {
     @AfterEach
@@ -23,7 +22,7 @@ public class LoginTest extends BaseTest {
     @Feature("/endpoint API")
     void successLoginTest() {
         // given
-        mockAuthMethodSuccess(BaseTest.wireMockServer);
+        mockAuthMethodSuccess(wireMockServer);
         var token = generateUniqueToken();
 
         // when
@@ -43,7 +42,7 @@ public class LoginTest extends BaseTest {
     @Feature("/endpoint API")
     void existingTokenFailLoginTest() {
         // given
-        mockAuthMethodSuccess(BaseTest.wireMockServer);
+        mockAuthMethodSuccess(wireMockServer);
         var token = generateUniqueToken();
 
         // when
@@ -64,7 +63,7 @@ public class LoginTest extends BaseTest {
     @Feature("/endpoint API")
     void externalFailLoginTest() {
         // given
-        mockAuthMethodFailed(BaseTest.wireMockServer);
+        mockAuthMethodFailed(wireMockServer);
         var token = generateUniqueToken();
 
         // when
@@ -88,6 +87,26 @@ public class LoginTest extends BaseTest {
 
         // when
         var result = endpointClient.sendRequest(Action.LOGIN, invalidToken);
+
+        // then
+        assertStep.verifyResultEquals(Result.ERROR, result.getResult());
+        assertStep.verifyMessageEquals(INVALID_TOKEN_ERROR, result.getMessage());
+    }
+
+    @Test
+    @Tag("Negative")
+    @DisplayName("Деманстрационный кейс")
+    @Description("Кейс специально настроен на падение, с целью продемонстрировать, как в отчетах Allure отображаются упавшие шаги")
+    @Severity(SeverityLevel.TRIVIAL)
+    @Story("/endpoint LOGIN Action")
+    @Feature("/endpoint API")
+    void allureFailDemonstration() {
+        // given
+        mockAuthMethodSuccess(wireMockServer);
+        var token = generateUniqueToken();
+
+        // when
+        var result = endpointClient.sendRequest(Action.LOGIN, token);
 
         // then
         assertStep.verifyResultEquals(Result.ERROR, result.getResult());

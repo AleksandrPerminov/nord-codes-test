@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2d0ec98-26ec-4261-9c84-ef907360f0dd" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/codes/nord/client/EndpointClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/codes/nord/enums/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/codes/nord/enums/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/codes/nord/response/EndpointResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/AssertStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/ErrorMessageConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/TokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/WireMockStubs.java" afterDir="false" />
+    <list default="true" id="d2d0ec98-26ec-4261-9c84-ef907360f0dd" name="Changes" comment="Created new classes for cases: ActionTest, LogoutTest, RequestSignatureTest&#10;Added new cases to classes: ActionTest, LogoutTest, RequestSignatureTest, LoginTest&#10;Created MaskUtil class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/codes/nord/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RequestSignatureTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RequestSignatureTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +36,9 @@
     &quot;accountId&quot;: &quot;6a3c3bc9-feee-4df2-b2db-4b7bc5ec10a6&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -58,44 +47,77 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.LoginTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.existingTokenFailLoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.externalFailLoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.invalidTokenFailLoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.successLoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LoginTest.testLogin.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [clean,test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [io.qameta.allure:allure-maven:2.11.2:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [io.qameta.allure:allure-maven:2.11.2:report].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [io.qameta.allure:allure-maven:2.17.0:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [io.qameta.allure:allure-maven:2.17.0:report].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.nord-codes-test [test].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/IdeaProjects/nord-codes-test&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Алеша/IdeaProjects/nord-codes-test/src/main/java/ru/codes/nord/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ActionTest.executor": "Run",
+    "JUnit.ActionTest.successActionTest.executor": "Run",
+    "JUnit.ActionTest.successLoginTest.executor": "Run",
+    "JUnit.LoginTest (1).executor": "Run",
+    "JUnit.LoginTest.executor": "Run",
+    "JUnit.LoginTest.existingTokenFailLoginTest.executor": "Run",
+    "JUnit.LoginTest.externalFailLoginTest.executor": "Run",
+    "JUnit.LoginTest.invalidTokenFailLoginTest.executor": "Run",
+    "JUnit.LoginTest.successLoginTest.executor": "Run",
+    "JUnit.LoginTest.testLogin.executor": "Run",
+    "JUnit.RequestSignatureTest.executor": "Run",
+    "Maven.nord-codes-test [clean,test].executor": "Run",
+    "Maven.nord-codes-test [clean].executor": "Run",
+    "Maven.nord-codes-test [compile].executor": "Run",
+    "Maven.nord-codes-test [io.qameta.allure:allure-maven:2.11.2:install].executor": "Run",
+    "Maven.nord-codes-test [io.qameta.allure:allure-maven:2.11.2:report].executor": "Run",
+    "Maven.nord-codes-test [io.qameta.allure:allure-maven:2.17.0:install].executor": "Run",
+    "Maven.nord-codes-test [io.qameta.allure:allure-maven:2.17.0:report].executor": "Run",
+    "Maven.nord-codes-test [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.nord-codes-test [org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test].executor": "Run",
+    "Maven.nord-codes-test [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/IdeaProjects/nord-codes-test",
+    "onboarding.tips.debug.path": "C:/Users/Алеша/IdeaProjects/nord-codes-test/src/main/java/ru/codes/nord/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Алеша\IdeaProjects\nord-codes-test\src\main\resources\app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.RequestSignatureTest">
+    <configuration name="ActionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nord-codes-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ActionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActionTest.successActionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nord-codes-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ActionTest" />
+      <option name="METHOD_NAME" value="successActionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActionTest.successLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nord-codes-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ActionTest" />
+      <option name="METHOD_NAME" value="successLoginTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="nord-codes-test" />
       <option name="PACKAGE_NAME" value="" />
@@ -117,9 +139,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RequestSignatureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nord-codes-test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RequestSignatureTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="JUnit.RequestSignatureTest" />
+        <item itemvalue="JUnit.ActionTest" />
+        <item itemvalue="JUnit.ActionTest.successActionTest" />
+        <item itemvalue="JUnit.ActionTest.successLoginTest" />
         <item itemvalue="JUnit.LoginTest" />
       </list>
     </recent_temporary>
@@ -141,11 +175,20 @@
       <option name="project" value="LOCAL" />
       <updated>1768072200048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created new classes for cases: ActionTest, LogoutTest, RequestSignatureTest&#10;Added new cases to classes: ActionTest, LogoutTest, RequestSignatureTest, LoginTest&#10;Created MaskUtil class">
+      <option name="closed" value="true" />
+      <created>1768226727828</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1768226727828</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="Created new classes for cases: ActionTest, LogoutTest, RequestSignatureTest&#10;Added new cases to classes: ActionTest, LogoutTest, RequestSignatureTest, LoginTest&#10;Created MaskUtil class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new classes for cases: ActionTest, LogoutTest, RequestSignatureTest&#10;Added new cases to classes: ActionTest, LogoutTest, RequestSignatureTest, LoginTest&#10;Created MaskUtil class" />
   </component>
 </project>
