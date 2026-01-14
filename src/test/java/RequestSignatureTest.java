@@ -6,6 +6,9 @@ import ru.codes.nord.enums.Result;
 import static utils.ErrorMessageConstants.*;
 import static utils.TokenUtil.generateUniqueToken;
 
+@DisplayName("Проверка обязательных хедеров и параметров /endpoint")
+@Story("/endpoint Request Signatures Validation")
+@Feature("/endpoint API")
 public class RequestSignatureTest extends BaseTest {
 
     @Test
@@ -13,8 +16,6 @@ public class RequestSignatureTest extends BaseTest {
     @DisplayName("Параметр action уходит с невалидным значением")
     @Description("Проверка поведения системы при невалидном значении параметра action")
     @Severity(SeverityLevel.NORMAL)
-    @Story("/endpoint Request Signatures Validation")
-    @Feature("/endpoint API")
     void invalidActionFail() {
         // given
         var token = generateUniqueToken();
@@ -32,8 +33,6 @@ public class RequestSignatureTest extends BaseTest {
     @DisplayName("Хедер X-Api-Key отсутствует в запросе")
     @Description("Проверка поведения системы при отсутствии обязательного хедера X-Api-Key")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint Request Signatures Validation")
-    @Feature("/endpoint API")
     void missingHeaderFail() {
         // given
         var token = generateUniqueToken();
@@ -51,8 +50,6 @@ public class RequestSignatureTest extends BaseTest {
     @DisplayName("Невалидный X-Api-Key хедер в запросе")
     @Description("Проверка поведения системы при невалидном значении обязательного хедера X-Api-Key")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint Request Signatures Validation")
-    @Feature("/endpoint API")
     void invalidHeaderFail() {
         // given
         var token = generateUniqueToken();
@@ -71,8 +68,6 @@ public class RequestSignatureTest extends BaseTest {
     @DisplayName("Параметр token отсутствует в запросе")
     @Description("Проверка поведения системы при отсутствии обязательного параметра token")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint Request Signatures Validation")
-    @Feature("/endpoint API")
     void missingTokenFail() {
         // when
         var result = endpointClient.sendRequestWithoutToken(Action.LOGIN);
@@ -87,8 +82,6 @@ public class RequestSignatureTest extends BaseTest {
     @DisplayName("Параметр action отсутствует в запросе")
     @Description("Проверка поведения системы при отсутствии обязательного параметра action")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint Request Signatures Validation")
-    @Feature("/endpoint API")
     void missingActionFail() {
         // given
         var token = generateUniqueToken();

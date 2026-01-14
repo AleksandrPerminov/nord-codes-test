@@ -7,6 +7,9 @@ import static utils.ErrorMessageConstants.*;
 import static utils.TokenUtil.generateUniqueToken;
 import static utils.WireMockStubs.*;
 
+@DisplayName("Проверка /endpoint с акшеном ACTION")
+@Story("/endpoint ACTION Action")
+@Feature("/endpoint API")
 public class ActionTest extends BaseTest {
     @AfterEach
     void rest() {
@@ -18,8 +21,6 @@ public class ActionTest extends BaseTest {
     @DisplayName("Успешное выполнение экшена после логина")
     @Description("Проверка выполнения экшена с использованием активного токена")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint ACTION Action")
-    @Feature("/endpoint API")
     void successActionTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);
@@ -40,8 +41,6 @@ public class ActionTest extends BaseTest {
     @DisplayName("Успешное выполнение серии экшенов после логина")
     @Description("Проверка выполнения серии экшенов с использованием активного токена")
     @Severity(SeverityLevel.NORMAL)
-    @Story("/endpoint ACTION Action")
-    @Feature("/endpoint API")
     void successSeriesOfActionsTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);
@@ -63,8 +62,6 @@ public class ActionTest extends BaseTest {
     @DisplayName("Неуспешное выполнение экшена без логина")
     @Description("Проверка выполнения экшена с использованием неактивного токена")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint ACTION Action")
-    @Feature("/endpoint API")
     void inactiveTokenFailActionTest() {
         // given
         mockActionMethodSuccess(wireMockServer);
@@ -83,8 +80,6 @@ public class ActionTest extends BaseTest {
     @DisplayName("Ошибка выполнения экшена, полученная от внешней системы")
     @Description("Проверка поведения системы при получении ошибки из внешней системы")
     @Severity(SeverityLevel.NORMAL)
-    @Story("/endpoint ACTION Action")
-    @Feature("/endpoint API")
     void externalFailActionTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);

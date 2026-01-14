@@ -7,6 +7,9 @@ import static utils.ErrorMessageConstants.*;
 import static utils.TokenUtil.generateUniqueToken;
 import static utils.WireMockStubs.*;
 
+@DisplayName("Проверка /endpoint с акшеном LOGIN")
+@Story("/endpoint LOGIN Action")
+@Feature("/endpoint API")
 public class LoginTest extends BaseTest {
     @AfterEach
     void rest() {
@@ -18,8 +21,6 @@ public class LoginTest extends BaseTest {
     @DisplayName("Успешный вход в систему")
     @Description("Проверка успешного входа в систему с использованием корректного токена")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint LOGIN Action")
-    @Feature("/endpoint API")
     void successLoginTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);
@@ -38,8 +39,6 @@ public class LoginTest extends BaseTest {
     @DisplayName("Ошибка входа в систему при повторном использовании активного токена")
     @Description("Проверка получения ошибки при повторном входе в систему с использованием корректного активного токена")
     @Severity(SeverityLevel.NORMAL)
-    @Story("/endpoint LOGIN Action")
-    @Feature("/endpoint API")
     void existingTokenFailLoginTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);
@@ -59,8 +58,6 @@ public class LoginTest extends BaseTest {
     @DisplayName("Ошибка входа в систему, полученная от внешней системы")
     @Description("Проверка поведения системы при получении ошибки из внешней системы")
     @Severity(SeverityLevel.NORMAL)
-    @Story("/endpoint LOGIN Action")
-    @Feature("/endpoint API")
     void externalFailLoginTest() {
         // given
         mockAuthMethodFailed(wireMockServer);
@@ -79,8 +76,6 @@ public class LoginTest extends BaseTest {
     @DisplayName("Ошибка входа в систему при использовании невалидного токена")
     @Description("Проверка получения ошибки при входе в систему с использованием невалидного токена")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint LOGIN Action")
-    @Feature("/endpoint API")
     void invalidTokenFailLoginTest() {
         // given
         var invalidToken = "A1B2C3D4E5F6G7H8I9J0K";
@@ -93,13 +88,12 @@ public class LoginTest extends BaseTest {
         assertStep.verifyMessageEquals(INVALID_TOKEN_ERROR, result.getMessage());
     }
 
+    @Disabled
     @Test
     @Tag("Negative")
     @DisplayName("Деманстрационный кейс")
     @Description("Кейс специально настроен на падение, с целью продемонстрировать, как в отчетах Allure отображаются упавшие шаги")
     @Severity(SeverityLevel.TRIVIAL)
-    @Story("/endpoint LOGIN Action")
-    @Feature("/endpoint API")
     void allureFailDemonstration() {
         // given
         mockAuthMethodSuccess(wireMockServer);

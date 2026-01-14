@@ -7,6 +7,9 @@ import static utils.ErrorMessageConstants.*;
 import static utils.TokenUtil.generateUniqueToken;
 import static utils.WireMockStubs.*;
 
+@DisplayName("Проверка /endpoint с акшеном LOGOUT")
+@Story("/endpoint LOGOUT Action")
+@Feature("/endpoint API")
 public class LogoutTest extends BaseTest {
     @AfterEach
     void rest() {
@@ -18,8 +21,6 @@ public class LogoutTest extends BaseTest {
     @DisplayName("Успешное выполнение логаута")
     @Description("Проверка выполнения логаута после активации токена")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("/endpoint LOGOUT Action")
-    @Feature("/endpoint API")
     void successLogoutTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);
@@ -48,8 +49,6 @@ public class LogoutTest extends BaseTest {
     @DisplayName("Неуспешное выполнение логаута без предварительного логина")
     @Description("Проверка выполнения логаута без активации токена")
     @Severity(SeverityLevel.MINOR)
-    @Story("/endpoint LOGOUT Action")
-    @Feature("/endpoint API")
     void failedLogoutTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);
@@ -68,8 +67,6 @@ public class LogoutTest extends BaseTest {
     @DisplayName("Успешное выполнение экшена после релогина")
     @Description("Проверка выполнения экшена с использованием активного токена после логаута")
     @Severity(SeverityLevel.NORMAL)
-    @Story("/endpoint LOGOUT Action")
-    @Feature("/endpoint API")
     void successReloginTest() {
         // given
         mockAuthMethodSuccess(wireMockServer);
